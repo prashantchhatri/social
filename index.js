@@ -10,9 +10,15 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocal = require("./config/passport-local-strategy");
 const MongoStore = require("connect-mongo")(session);
-const saasMiddleware = require('npm-node-sass-middleware')
+const saasMiddleware = require('node-sass-middleware')
 
-app.use
+app.use(saasMiddleware({
+    src: './assets/scss',
+    dest: './assets/css',
+    debug: true,
+    outputStyle: 'extended',
+    prefix: '/css'
+}))
 app.use(express.static("./assets"));
 app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
