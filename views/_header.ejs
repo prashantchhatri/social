@@ -1,18 +1,34 @@
-<Header> Page header 
-    <ul>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<Header class="header">
+    <ul class="nav justify-content-end bg-dark ">
         <% if(locals.user){ %>
-        <li> <% user.name %> </li>
+        <li class="nav-item"> <%= user.name %> </li>
         <li> 
-            <a href="/users/sign-out">Sign Out</a>
+            <a class="nav-link" class="nav-link" href="/users/sign-out">Sign Out</a>
         </li>
         <% }else{ %>
-            <li>
-                <a href="/users/sign-in">Sign In</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/sign-in">Sign In</a>
             </li>
 
-            <li>
-                <a href="/users/sign-up">Sign Up</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/sign-up">Sign Up</a>
             </li>
         <% } %>
     </ul>
+
+    <!-- <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul> -->
 </Header>

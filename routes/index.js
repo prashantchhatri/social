@@ -10,6 +10,7 @@ router.get('/create', homeController.create);
 
 
 router.use('/users', require('./user'));
+router.use('/posts', require('./posts'))
 
 
 
